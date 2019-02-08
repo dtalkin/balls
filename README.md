@@ -40,5 +40,5 @@ color is any common color name (e.g. red, blue, yellow).
 
 ### Notes:
 
-tune.py and balls9.py require pyaudio, which may be obtained from ```  people.csail.mit.edu/hubert/pyaudio/ ```
+tune.py and balls9.py require pyaudio, which may be obtained from http://people.csail.mit.edu/hubert/pyaudio/
 
