@@ -476,9 +476,9 @@ class Music(object):
                 notes = []
                 for freq in self.chords[cind]:
                     notes.append(freq)
-                    notes.append(2.0 * freq)
-                notes.extend(notes)
-                #  random.shuffle(notes)
+                #   notes.append(2.0 * freq)
+                #   notes.extend(notes)
+                #   random.shuffle(notes)
                 notes.sort()
                 self.tone_gen.SetupPings(notes, .7, 2.0)
                 self.StartAudio()
@@ -492,7 +492,7 @@ def main(args):
     p = pyaudio.PyAudio()
     m = Music(p, tonic='C4')
     m.SetupProgression(chord_seq=args[1:], n_semitones=24)
-    m.RepeatProgression(3.0, 4)
+    m.RepeatProgression(2.0, 4)
 
 if __name__ == '__main__':
     main(sys.argv)
