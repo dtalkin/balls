@@ -1,9 +1,9 @@
 #!/usr/bin/python
 #
-"""Simulates and displays a collection of potentially-interacting pendulumms."""
+"""Simulates and displays a collection of potentially-interacting pendulums."""
 #
 #
-# Copyright 2017 David Talkin.
+# Copyright 2017-2019 David Talkin.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,13 +25,22 @@ import math
 import time
 import Tkinter as tk
 import threading
-from balls9 import Elastic
 
 
 # Just remember: F = ma  ;-)
 
 g = 9.807  # m / (s*s)
 g = 1.0
+
+
+def Elastic(m1, m2, v1, v2):
+    """Returns a tuple of the velocities resulting from a perfectly
+    elastic collision between masses m1 traveling at v1 and m2
+    traveling at v2.  This simultaneously conserves momentum and energy."""
+    vp2 =  ((m2 * v2) + (m1 * ((2.0 * v1) - v2))) / (m1 + m2)
+    vp1 = vp2 + v2 - v1
+    return vp1, vp2
+
 
 def DegToRad(deg):
     return 2.0 * math.pi * deg / 360.0
